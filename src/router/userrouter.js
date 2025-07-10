@@ -1,10 +1,11 @@
-// userrouter.js
-
 import express from "express";
-import userController from "../controller/usercontroller.js"; // ✅ सही relative path
+
+import { createuser, getuser } from "../controller/usercontroller.js";
 
 const router = express.Router(); // ✅ सही तरीका
 
-router.get("/", userController); // ✅ रूट और कंट्रोलर
+
+router.post("/add", createuser);
+router.get("/all", getuser);
 
 export default router;
